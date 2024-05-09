@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.thymeleaf.org ">
+<meta charset="UTF-8">
+<title>Create user</title>
+<link rel="stylesheet" href="user-update.css">
+</head>
+<div id="body">
+    <form action="#" th:action="@{/user-update}" th:object="${menu}" method="post">
+        <label for="id">ID</label>
+        <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+        <br/>
+
+        <label for="firstCourse">First сourse</label>
+        <input type="text" th:field="*{firstCourse}" id="firstCourse" placeholder="First сourse">
+        <br/>
+
+        <label for="secondCourse">Second course</label>
+        <input type="text" th:field="*{secondCourse}" id="secondCourse" placeholder="Second course">
+        <br/>
+
+        <label for="drink">Drink</label>
+        <input type="text" th:field="*{drink}" id="drink" placeholder="Drink">
+        <br/>
+
+        <label for="prise">Prise</label>
+        <input type="text" th:field="*{prise}" id="prise" placeholder="Prise">
+        <br/>
+
+        <input type="submit" value="Update menu">
+    </form>
+</div>
+</body>
+</html>

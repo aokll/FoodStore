@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.thymeleaf.org ">
+<html>
+<head>
+    <title>food store</title>
+    <link rel="stylesheet" href="food-store.css">
+</head>
+<body>
+<div id="body">
+    <h1>Food store</h1>
+    <div class="div1">
+        <a th:href="@{/users}" class="btn btn-primary mt-3">Перейти к загатовке меню</a>
+    </div>
+    <div class="div2">
+        <a th:href="@{/order-table}" class="btn btn-primary mt-3">Назад</a>
+    </div>
+    <div id="div3">
+        <form th:method="POST" th:action="@{/logout}">
+            <button class="btn btn-primary mt-3">Выйти</button>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.thymeleaf.org ">
+<html>
+<head>
+    <title>Order table</title>
+    <link rel="stylesheet" href="order-table.css">
+</head>
+<body>
+<div id="body">
+    <h1>Order table</h1>
+
+    <div class="div1">
+        <a th:href="@{/food-store}" class="btn btn-primary mt-3">Только для администраторов</a>
+    </div>
+    <form th:method="POST" th:action="@{/logout}">
+        <button class="btn btn-primary mt-3">Выйти</button>
+    </form>
+</div>
+</body>
+
+</html>

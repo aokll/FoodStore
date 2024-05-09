@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>Create user</title>
+    <link rel="stylesheet" href="user-create.css">
+</head>
+<body>
+<div class="body">
+    <form action="#" th:action="@{/user-create}" th:object="${menu}" method="post">
+        <label class="form-label" for="firstCourse">First сourse</label>
+        <input class="form-control" type="text" th:field="*{firstCourse}" id="firstCourse" placeholder="First сourse"><br/>
+
+        <label class="form-label" for="secondCourse">Second course</label>
+        <input class="form-control" type="text" th:field="*{secondCourse}" id="secondCourse" placeholder="Second course"><br/>
+
+        <label class="form-label" for="drink">Drink</label>
+        <input class="form-control" type="text" th:field="*{drink}" id="drink" placeholder="Drink"><br/>
+
+        <label class="form-label" for="prise">Prise</label>
+        <input class="form-control" type="text" th:field="*{prise}" id="prise" placeholder="Prise"><br/>
+
+
+        <input type="submit" value="Добавить блюда в меню">
+    </form></div>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

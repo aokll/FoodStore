@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+<!--    <link rel="stylesheet" href="css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="user-list.css">
+    <title>Menu</title>
+</head>
+<body>
+<div class="body" th:switch="${users}">
+    <h2 th:case="null">No users found!</h2>
+    <div th:case="*">
+        <h2>Users</h2>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>First сourse</th>
+                <th>Second course</th>
+                <th>Drink</th>
+                <th>Prise</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="menu : ${users}">
+                <td th:text="${menu.id}"></td>
+                <td th:text="${menu.firstCourse}"></td>
+                <td th:text="${menu.secondCourse}"></td>
+                <td th:text="${menu.drink}"></td>
+                <td th:text="${menu.prise}"></td>
+                <td><a class="btn btn-success" th:href="@{user-update/{id}(id=${menu.id})}"
+                       title="Изменить пользователя">Change</a>&nbsp;
+                    <a class="btn btn-danger" th:href="@{user-delete/{id}(id=${menu.id})}"
+                       title="Удалить пользователя">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>
+        <div class="div1">
+            <a class="btn btn-primary" href="/user-create">Добавить блюда в меню</a>
+        </div>
+        <div class="div2">
+            <a class="btn btn-primary" href="/food-store">назад</a>
+        </div>
+    </p>
+</div>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
