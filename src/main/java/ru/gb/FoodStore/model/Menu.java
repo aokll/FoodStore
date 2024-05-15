@@ -9,7 +9,9 @@ public class Menu {
     private String firstCourse;
 
     private String secondCourse;
+
     private String drink;
-    private String prise;
+
+    private int prise;
 
 }

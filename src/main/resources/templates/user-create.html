@@ -9,8 +9,8 @@
 <body>
 <div class="body">
     <form action="#" th:action="@{/user-create}" th:object="${menu}" method="post">
-        <label class="form-label" for="firstCourse">First сourse</label>
-        <input class="form-control" type="text" th:field="*{firstCourse}" id="firstCourse" placeholder="First сourse"><br/>
+        <label class="form-label" for="firstCourse">First course</label>
+        <input class="form-control" type="text" th:field="*{firstCourse}" id="firstCourse" placeholder="First course"><br/>
 
         <label class="form-label" for="secondCourse">Second course</label>
         <input class="form-control" type="text" th:field="*{secondCourse}" id="secondCourse" placeholder="Second course"><br/>
@@ -19,8 +19,7 @@
         <input class="form-control" type="text" th:field="*{drink}" id="drink" placeholder="Drink"><br/>
 
         <label class="form-label" for="prise">Prise</label>
-        <input class="form-control" type="text" th:field="*{prise}" id="prise" placeholder="Prise"><br/>
-
+        <input class="form-control" type="number" th:field="*{prise}" id="prise" placeholder="Prise"><br/>
 
         <input type="submit" value="Добавить блюда в меню">
     </form></div>
