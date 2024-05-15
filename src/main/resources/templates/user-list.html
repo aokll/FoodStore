@@ -11,15 +11,16 @@
 <div class="body" th:switch="${users}">
     <h2 th:case="null">No users found!</h2>
     <div th:case="*">
-        <h2>Users</h2>
+        <h2>Menu</h2>
         <table class="table table-bordered">
             <thead>
             <tr>
                 <th>Id</th>
-                <th>First сourse</th>
+                <th>First course</th>
                 <th>Second course</th>
                 <th>Drink</th>
                 <th>Prise</th>
+                <th></th>
                 <th></th>
             </tr>
             </thead>
@@ -31,8 +32,8 @@
                 <td th:text="${menu.drink}"></td>
                 <td th:text="${menu.prise}"></td>
                 <td><a class="btn btn-success" th:href="@{user-update/{id}(id=${menu.id})}"
-                       title="Изменить пользователя">Change</a>&nbsp;
-                    <a class="btn btn-danger" th:href="@{user-delete/{id}(id=${menu.id})}"
+                       title="Изменить пользователя">Change</a></td>
+                <td><a class="btn btn-danger" th:href="@{user-delete/{id}(id=${menu.id})}"
                        title="Удалить пользователя">Delete</a></td>
             </tr>
             </tbody>
