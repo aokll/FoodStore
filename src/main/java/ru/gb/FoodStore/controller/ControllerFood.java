@@ -42,7 +42,7 @@ public class ControllerFood {
     }
     @GetMapping("/user-update/{id}")
     public String updateFormMenu(Menu menu){
-        return "user-update.html";
+        return "user-update";
     }
     @PostMapping("/user-update")
     public String updateUser(Menu menu){

@@ -1,7 +1,17 @@
+server:
+  port: 8081
 spring:
   application:
   name : FoodStore
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include : metrics,prometheus
+
 db.findAll : SELECT * FROM userTable
-db.save : INSERT INTO userTable (firstCourse,secondCourse,drink,prise) VALUES ( ?, ?, ?, ?)
+db.save : INSERT INTO userTable (firstCourse, secondCourse, drink, prise) VALUES ( ?, ?, ?, ?)
 db.deleteById : DELETE FROM userTable WHERE id=?
-db.updateById : UPDATE userTable SET firstCourse=?, secondCourse=?,drink=? WHERE id=?
+db.updateById : UPDATE userTable SET firstCourse=?, secondCourse=?, drink=?, prise=? WHERE id=?
+
