@@ -25,7 +25,7 @@ public class MenuRepository {
             rowObject.setFirstCourse(r.getString("firstCourse"));
             rowObject.setSecondCourse(r.getString("secondCourse"));
             rowObject.setDrink(r.getString("drink"));
-            rowObject.setPrise(r.getString("prise"));
+            rowObject.setPrise(r.getInt("prise"));
             return rowObject;
         };
 
@@ -37,16 +37,15 @@ public class MenuRepository {
                 menu.getFirstCourse(),
                 menu.getSecondCourse(),
                 menu.getDrink(),
-                menu.getPrise()
-        );
-        return menu;
+                menu.getPrise());
+        return  menu;
     }
 
     public void deleteById(int id){
         jdbc.update(dBconf.getDeleteById(),id);
     }
 
-    public void updateById(int id, String firstCourse, String secondCourse, String drink, String prise){
-        jdbc.update(dBconf.getUpdateById(), firstCourse, secondCourse, drink, prise);
+    public void updateById(int id, String firstCourse, String secondCourse, String drink, int prise){
+        jdbc.update(dBconf.getUpdateById(), firstCourse, secondCourse, drink, prise, id);
     }
 }

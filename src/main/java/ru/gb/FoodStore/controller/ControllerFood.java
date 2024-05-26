@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.gb.FoodStore.model.Menu;
+import ru.gb.FoodStore.service.FileGateway;
 import ru.gb.FoodStore.service.MenuService;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
 public class ControllerFood {
     @Autowired
     private MenuService menuService;
+    private FileGateway fileGateway;
 
     @GetMapping("/users")
     public String findAll(Model model){
@@ -32,6 +34,7 @@ public class ControllerFood {
     @PostMapping("/user-create")
     public String createMenu(Menu menu){
         menuService.saveMenu(menu);
+        fileGateway.writeToFile("saveFile.txt", menu.toString());
         return "redirect:/users";
     }
 
@@ -42,7 +45,7 @@ public class ControllerFood {
     }
     @GetMapping("/user-update/{id}")
     public String updateFormMenu(Menu menu){
-        return "user-update.html";
+        return "user-update";
     }
     @PostMapping("/user-update")
     public String updateUser(Menu menu){
